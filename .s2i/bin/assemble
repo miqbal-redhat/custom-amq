@@ -10,5 +10,11 @@ if [ -d $CONFIG ]; then
     echo "Done"
 fi
 
+view_and_admin_groups=admin,view
+admin_groups=admin
+
 export view_and_admin_groups
 export admin_groups
+
+echo $view_and_admin_groups
+echo $admin_groups
