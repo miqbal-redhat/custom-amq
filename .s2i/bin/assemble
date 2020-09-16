@@ -9,3 +9,6 @@ if [ -d $CONFIG ]; then
     cp -rfv $CONFIG/* $AMQ_HOME/conf/
     echo "Done"
 fi
+
+export view_and_admin_groups
+export admin_groups
