@@ -22,12 +22,19 @@
          <entry domain="hawtio"/>
       </whitelist>
       <default-access>
-         <access method="list*" roles="admin"/>
+         <!--
+        <access method="list*" roles="admin"/>
          <access method="get*" roles="admin"/>
          <access method="is*" roles="admin"/>
          <access method="set*" roles="admin"/>
-         <access method="*" roles="${AMQ_ADMIN_GROUPS}"/>
-         <!--<access method="*" roles="admin"/> -->
+         <access method="*" roles="admin"/>
+         -->
+        <access method="list*" roles="${AMQ_VIEW_GROUPS}"/>
+        <access method="get*" roles="${AMQ_VIEW_GROUPS}"/>
+        <access method="is*" roles="${AMQ_VIEW_GROUPS}"/>
+        <access method="set*" roles="${AMQ_VIEW_GROUPS}"/>
+        <access method="*" roles="${AMQ_VIEW_GROUPS}"/>
+
       </default-access>
       <role-access>
          <match domain="org.apache.activemq.artemis">
