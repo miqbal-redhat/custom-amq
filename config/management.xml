@@ -26,7 +26,8 @@
          <access method="get*" roles="admin"/>
          <access method="is*" roles="admin"/>
          <access method="set*" roles="admin"/>
-         <access method="*" roles="admin"/>
+         <access method="*" roles="${AMQ_ADMIN_GROUPS}"/>
+         <!--<access method="*" roles="admin"/> -->
       </default-access>
       <role-access>
          <match domain="org.apache.activemq.artemis">
