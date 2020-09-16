@@ -19,7 +19,7 @@
    <!--<connector connector-port="1099"/>-->
    <authorisation>
       <whitelist>
-         <!--<entry domain="hawtio"/> -->
+         <entry domain="hawtio"/> 
       </whitelist>
       <default-access>
          <!--
