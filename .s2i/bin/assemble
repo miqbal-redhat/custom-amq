@@ -1,0 +1,17 @@
+#!/bin/sh
+# Called during the image build life cycle.
+
+CONFIG="/tmp/src/config"
+LIB="/tmp/src/lib"
+
+if [ -d $CONFIG ]; then
+    echo "Copying config files..."
+    cp -rfv $CONFIG/* $AMQ_HOME/conf/
+    echo "Done"
+fi
+
+if [ -d $LIB ]; then
+    echo "Copying lib files..."
+    cp -rfv $LIB/* $AMQ_HOME/lib/
+    echo "Done"
+fi
