@@ -9,9 +9,3 @@ if [ -d $CONFIG ]; then
     cp -rfv $CONFIG/* $AMQ_HOME/conf/
     echo "Done"
 fi
-
-if [ -d $LIB ]; then
-    echo "Copying lib files..."
-    cp -rfv $LIB/* $AMQ_HOME/lib/
-    echo "Done"
-fi
