@@ -44,6 +44,14 @@
             <access method="set*" roles="admin"/>
             <access method="*" roles="admin"/>
          </match>
+             <match domain="hawtio">
+            <access method="list*" roles="${AMQ_VIEW_GROUPS}"/>
+            <access method="get*" roles="${AMQ_VIEW_GROUPS}"/>
+            <access method="is*" roles="${AMQ_VIEW_GROUPS}"/>
+            <access method="set*" roles="${AMQ_VIEW_GROUPS}"/>
+            <access method="*" roles="${AMQ_VIEW_GROUPS}"/>
+         </match>
+
       </role-access>
    </authorisation>
 </management-context>
