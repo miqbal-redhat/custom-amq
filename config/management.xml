@@ -22,19 +22,35 @@
          <entry domain="hawtio"/> 
       </whitelist>
       <default-access>
+         <!-- 
         <access method="list*" roles="app_q84_dev_r_amq,app_q84_dev_rw_amq,app_q84_dev_adm_amq"/>
         <access method="get*" roles="aapp_q84_dev_rw_amq,app_q84_dev_adm_amq"/>
         <access method="is*" roles="app_q84_dev_rw_amq,app_q84_dev_adm_amq"/>
         <access method="set*" roles="app_q84_dev_rw_amq,app_q84_dev_adm_amq"/>
         <access method="*" roles="app_q84_dev_adm_amq"/>
+          -->
+         <access method="list*" roles="${AMQ_VIEW_GROUPS},${AMQ_EDIT_GROUPS},${AMQ_ADMIN_GROUPS}"/>
+        <access method="get*" roles="${AMQ_EDIT_GROUPS},${AMQ_ADMIN_GROUPS}"/>
+        <access method="is*" roles="${AMQ_EDIT_GROUPS},${AMQ_ADMIN_GROUPS}"/>
+        <access method="set*" roles="${AMQ_EDIT_GROUPS},${AMQ_ADMIN_GROUPS}"/>
+        <access method="*" roles="${AMQ_ADMIN_GROUPS}"/>
+
       </default-access>
       <role-access>
          <match domain="org.apache.activemq.artemis">
+             <!-- 
             <access method="list*" roles="app_q84_dev_r_amq,app_q84_dev_rw_amq,app_q84_dev_adm_amq"/>
             <access method="get*" roles="app_q84_dev_rw_amq,app_q84_dev_adm_amq"/>
             <access method="is*" roles="app_q84_dev_rw_amq,app_q84_dev_adm_amq"/>
             <access method="set*" roles="app_q84_dev_rw_amq,app_q84_dev_adm_amq"/>
             <access method="*" roles="app_q84_dev_adm_amq"/>
+          -->
+            <access method="list*" roles="${AMQ_VIEW_GROUPS},${AMQ_EDIT_GROUPS},${AMQ_ADMIN_GROUPS}"/>
+            <access method="get*" roles="${AMQ_EDIT_GROUPS},${AMQ_ADMIN_GROUPS}"/>
+            <access method="is*" roles="${AMQ_EDIT_GROUPS},${AMQ_ADMIN_GROUPS}"/>
+            <access method="set*" roles="${AMQ_EDIT_GROUPS},${AMQ_ADMIN_GROUPS}"/>
+            <access method="*" roles="${AMQ_ADMIN_GROUPS}"/>
+
          </match>
              <match domain="hawtio">
             <!-- 
