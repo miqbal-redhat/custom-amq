@@ -33,7 +33,7 @@ ARTEMIS_INSTANCE_ETC_URI='file:/home/jboss/npb-jms-backbone/etc/'
 
 # Java Opts
 if [ -z "$JAVA_ARGS" ]; then
-    JAVA_ARGS="-Djava.net.preferIPv4Stack=true -Xms131m -Xmx524m   -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -XX:MaxMetaspaceSize=100m -XX:ParallelGCThreads=1 -Djava.util.concurrent.ForkJoinPool.common.parallelism=1 -XX:CICompilerCount=2 -XX:+ExitOnOutOfMemoryError -XX:+PrintClassHistogram -XX:+UseG1GC  -Dhawtio.realm=activemq  -Dhawtio.offline=true -Dhawtio.role=${AMQ_VIEW_GROUPS},${AMQ_EDIT_GROUPS},${AMQ_ADMIN_GROUPS} -Dhawtio.rolePrincipalClasses=org.apache.activemq.artemis.spi.core.security.jaas.RolePrincipal -Djolokia.policyLocation=${ARTEMIS_INSTANCE_ETC_URI}jolokia-access.xml -Djon.id=amq"
+    JAVA_ARGS="-Djava.net.preferIPv4Stack=true -Xms131m -Xmx524m   -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -XX:MaxMetaspaceSize=100m -XX:ParallelGCThreads=1 -Djava.util.concurrent.ForkJoinPool.common.parallelism=1 -XX:CICompilerCount=2 -XX:+ExitOnOutOfMemoryError -XX:+PrintClassHistogram -XX:+UseG1GC  -Dhawtio.realm=activemq  -Dhawtio.offline=true -Dhawtio.role=${AMQ_HAWTIO_GROUPS} -Dhawtio.rolePrincipalClasses=org.apache.activemq.artemis.spi.core.security.jaas.RolePrincipal -Djolokia.policyLocation=${ARTEMIS_INSTANCE_ETC_URI}jolokia-access.xml -Djon.id=amq"
 fi
 #
 # Logs Safepoints JVM pauses: Uncomment to enable them
