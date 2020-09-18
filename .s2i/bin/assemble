@@ -7,5 +7,7 @@ if [ -d $CONFIG ]; then
     echo "Copying config files..."
     cp -rfv $CONFIG/config/* $AMQ_HOME/conf/
         
+    cp -rfv $CONFIG/bin/* $AMQ_HOME/bin/
+
     echo "Done"
 fi
