@@ -6,14 +6,8 @@ DISABLER_TAG="<!-- Remove this tag to enable custom configuration -->"
 
 declare -a CONFIG_FILES=("BROKER_XML" "LOGGING_PROPERTIES")
 
-function find_env() {
-  var=${!1}
-  echo "${var:-$2}"
-}
 
 function swapVars() {
-  sslDir=$(find_env "AMQ_KEYSTORE_TRUSTSTORE_DIR" "")
-  echo " SSL Directory : '$AMQ_KEYSTORE_TRUSTSTORE_DIR'"
   
   sed -i "s/\${BROKER_IP}/$BROKER_IP/g" $1
   sed -i "s/\${AMQ_NAME}/$AMQ_NAME/g" $1
@@ -21,7 +15,7 @@ function swapVars() {
   sed -i "s/\${AMQ_STORAGE_USAGE_LIMIT}/$AMQ_STORAGE_USAGE_LIMIT/g" $1
   sed -i "s/\${AMQ_CLUSTER_USER}/$AMQ_CLUSTER_USER/g" $1
   sed -i "s/\${AMQ_CLUSTER_PASSWORD}/$AMQ_CLUSTER_PASSWORD/g" $1
-  sed -i "s/\${AMQ_KEYSTORE_TRUSTSTORE_DIR}/$sslDir/g" $1
+  sed -i "s/\${AMQ_KEYSTORE_TRUSTSTORE_DIR}/$AMQ_KEYSTORE_TRUSTSTORE_DIR/g" $1
 
 }
 
