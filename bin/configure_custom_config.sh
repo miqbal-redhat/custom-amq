@@ -6,6 +6,11 @@ DISABLER_TAG="<!-- Remove this tag to enable custom configuration -->"
 
 declare -a CONFIG_FILES=("BROKER_XML" "LOGGING_PROPERTIES")
 
+function find_env() {
+  var=${!1}
+  echo "${var:-$2}"
+}
+
 function swapVars() {
   sed -i "s/\${BROKER_IP}/$BROKER_IP/g" $1
   sed -i "s/\${AMQ_NAME}/$AMQ_NAME/g" $1
@@ -13,15 +18,7 @@ function swapVars() {
   sed -i "s/\${AMQ_STORAGE_USAGE_LIMIT}/$AMQ_STORAGE_USAGE_LIMIT/g" $1
   sed -i "s/\${AMQ_CLUSTER_USER}/$AMQ_CLUSTER_USER/g" $1
   sed -i "s/\${AMQ_CLUSTER_PASSWORD}/$AMQ_CLUSTER_PASSWORD/g" $1
-  sed -i "s/\${AMQ_KEYSTORE_TRUSTSTORE_DIR}/Test/g" $1
-  sed -i "s/\${AMQ_KEYSTORE}/$AMQ_KEYSTORE/g" $1
-  sed -i "s/\${AMQ_KEYSTORE_PASSWORD}/$AMQ_KEYSTORE_PASSWORD/g" $1
-  sed -i "s/\${AMQ_TRUSTSTORE}/$AMQ_TRUSTSTORE/g" $1
-  sed -i "s/\${AMQ_TRUSTSTORE_PASSWORD}/$AMQ_TRUSTSTORE_PASSWORD/g" $1
-  sed -i "s/\${AMQ_EDIT_GROUPS}/$AMQ_EDIT_GROUPS/g" $1
-  sed -i "s/\${AMQ_ADMIN_GROUPS}/$AMQ_ADMIN_GROUPS/g" $1
-  sed -i "s/\${AMQ_VIEW_GROUPS}/$AMQ_VIEW_GROUPS/g" $1
-  sed -i "s/\${AMQ_HAWTIO_GROUPS}/$AMQ_HAWTIO_GROUPS/g" $1
+  sed -i "s/\${AMQ_KEYSTORE_TRUSTSTORE_DIR}/$(find_env "AMQ_KEYSTORE_TRUSTSTORE_DIR" "")/g" $1
 
 }
 
