@@ -6,6 +6,10 @@ DISABLER_TAG="<!-- Remove this tag to enable custom configuration -->"
 
 declare -a CONFIG_FILES=("BROKER_XML" "LOGGING_PROPERTIES")
 
+function find_env() {
+  var=${!1}
+  echo "${var:-$2}"
+}
 
 function swapVars() {
   sslDir=$(find_env "AMQ_KEYSTORE_TRUSTSTORE_DIR" "")
