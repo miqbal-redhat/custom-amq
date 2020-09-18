@@ -12,13 +12,16 @@ function find_env() {
 }
 
 function swapVars() {
+  sslDir=$(find_env "AMQ_KEYSTORE_TRUSTSTORE_DIR" "")
+    echo "ssl Dir value is :'$sslDir'"
+
   sed -i "s/\${BROKER_IP}/$BROKER_IP/g" $1
   sed -i "s/\${AMQ_NAME}/$AMQ_NAME/g" $1
   sed -i "s/\${AMQ_ROLE}/$AMQ_ROLE/g" $1
   sed -i "s/\${AMQ_STORAGE_USAGE_LIMIT}/$AMQ_STORAGE_USAGE_LIMIT/g" $1
   sed -i "s/\${AMQ_CLUSTER_USER}/$AMQ_CLUSTER_USER/g" $1
   sed -i "s/\${AMQ_CLUSTER_PASSWORD}/$AMQ_CLUSTER_PASSWORD/g" $1
-  sed -i "s/\${AMQ_KEYSTORE_TRUSTSTORE_DIR}/$(find_env "AMQ_KEYSTORE_TRUSTSTORE_DIR" "")/g" $1
+  sed -i "s/\${AMQ_KEYSTORE_TRUSTSTORE_DIR}/$sslDir/g" $1
 
 }
 
