@@ -2,7 +2,6 @@
 # Called during the image build life cycle.
 
 CONFIG="/tmp/src"
-LIB="/tmp/src/lib"
 
 if [ -d $CONFIG ]; then
     echo "Copying config files..."
