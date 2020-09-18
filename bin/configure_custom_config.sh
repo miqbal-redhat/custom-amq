@@ -14,7 +14,7 @@ function find_env() {
 function swapVars() {
   sslDir=$(find_env "AMQ_KEYSTORE_TRUSTSTORE_DIR" "")
   keystory=$(find_env "AMQ_KEYSTORE" "")
-  export SSL_LOC=sslDir/keystory
+  SSL_LOC=sslDir/keystory
   
   sed -i "s/\${BROKER_IP}/$BROKER_IP/g" $1
   sed -i "s/\${AMQ_NAME}/$AMQ_NAME/g" $1
@@ -22,6 +22,7 @@ function swapVars() {
   sed -i "s/\${AMQ_STORAGE_USAGE_LIMIT}/$AMQ_STORAGE_USAGE_LIMIT/g" $1
   sed -i "s/\${AMQ_CLUSTER_USER}/$AMQ_CLUSTER_USER/g" $1
   sed -i "s/\${AMQ_CLUSTER_PASSWORD}/$AMQ_CLUSTER_PASSWORD/g" $1
+  sed -i "s/\${SSL_LOC}/$SSL_LOC/g" $1
 
 }
 
