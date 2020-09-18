@@ -9,16 +9,15 @@ fi
 
 
 export BROKER_IP=`hostname -f`
-export BROKER_IP=`hostname -f`
-export AMQ_KEYSTORE_TRUSTSTORE_DIR=$(find_env "AMQ_KEYSTORE_TRUSTSTORE_DIR" "")
-export AMQ_KEYSTORE=$(find_env "AMQ_KEYSTORE" "")
-export AMQ_KEYSTORE_PASSWORD=$(find_env "AMQ_KEYSTORE_PASSWORD" "")
-export AMQ_TRUSTSTORE=$(find_env "AMQ_TRUSTSTORE" "")
-export AMQ_TRUSTSTORE_PASSWORD=$(find_env "AMQ_TRUSTSTORE_PASSWORD" "")
-export AMQ_VIEW_GROUPS=$(find_env "AMQ_VIEW_GROUPS" "")
-export AMQ_EDIT_GROUPS=$(find_env "AMQ_EDIT_GROUPS" "")
-export AMQ_ADMIN_GROUPS=$(find_env "AMQ_ADMIN_GROUPS" "")
-export AMQ_HAWTIO_GROUPS=$(find_env "AMQ_HAWTIO_GROUPS" "")
+#export AMQ_KEYSTORE_TRUSTSTORE_DIR=$(find_env "AMQ_KEYSTORE_TRUSTSTORE_DIR" "")
+#export AMQ_KEYSTORE=$(find_env "AMQ_KEYSTORE" "")
+#export AMQ_KEYSTORE_PASSWORD=$(find_env "AMQ_KEYSTORE_PASSWORD" "")
+#export AMQ_TRUSTSTORE=$(find_env "AMQ_TRUSTSTORE" "")
+#export AMQ_TRUSTSTORE_PASSWORD=$(find_env "AMQ_TRUSTSTORE_PASSWORD" "")
+#export AMQ_VIEW_GROUPS=$(find_env "AMQ_VIEW_GROUPS" "")
+#export AMQ_EDIT_GROUPS=$(find_env "AMQ_EDIT_GROUPS" "")
+#export AMQ_ADMIN_GROUPS=$(find_env "AMQ_ADMIN_GROUPS" "")
+#export AMQ_HAWTIO_GROUPS=$(find_env "AMQ_HAWTIO_GROUPS" "")
 
 CONFIG_TEMPLATES=/config_templates
 #Set the memory options via adjust_java_options from dynamic_resources
@@ -127,7 +126,9 @@ function updateAcceptorsForSSL() {
     else
        SSL_OPS="sslEnabled=true;keyStorePath=${keyStorePath};keyStorePassword=${keyStorePassword};sslProvider=${sslProvider}"
     fi
-
+    
+    export SSL_OPS
+    
     if [ "${#protocols[@]}" -ne "0" ]; then
       acceptors=""
       for protocol in ${protocols[@]}; do
