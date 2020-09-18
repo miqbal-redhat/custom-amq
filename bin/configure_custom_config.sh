@@ -2,7 +2,7 @@
 set -e
 
 INSTANCE_DIR=$1
-DISABLER_TAG=""
+DISABLER_TAG="<!-- Remove this tag to enable custom configuration -->"
 
 declare -a CONFIG_FILES=("BROKER_XML" "LOGGING_PROPERTIES")
 
@@ -12,6 +12,7 @@ function swapVars() {
   sed -i "s/\${AMQ_ROLE}/$AMQ_ROLE/g" $1
   sed -i "s/\${AMQ_STORAGE_USAGE_LIMIT}/$AMQ_STORAGE_USAGE_LIMIT/g" $1
   sed -i "s/\${AMQ_CLUSTER_USER}/$AMQ_CLUSTER_USER/g" $1
+  sed -i "s/\${AMQ_CLUSTER_PASSWORD}/$AMQ_CLUSTER_PASSWORD/g" $1
   sed -i "s/\${AMQ_KEYSTORE_TRUSTSTORE_DIR}/$AMQ_KEYSTORE_TRUSTSTORE_DIR/g" $1
   sed -i "s/\${AMQ_KEYSTORE}/$AMQ_KEYSTORE/g" $1
   sed -i "s/\${AMQ_KEYSTORE_PASSWORD}/$AMQ_KEYSTORE_PASSWORD/g" $1
