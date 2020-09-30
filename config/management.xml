@@ -16,8 +16,8 @@
   limitations under the License.
   -->
 <management-context xmlns="http://activemq.org/schema">
-   <connector connector-port="1099"/>
-   <authorisation>
+  <connector connector-host="0.0.0.0" connector-port="1099"/>   
+  <authorisation>
       <whitelist>
          <entry domain="hawtio"/> 
       </whitelist>
