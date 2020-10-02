@@ -16,7 +16,7 @@
   limitations under the License.
   -->
 <management-context xmlns="http://activemq.org/schema">
-  <connector connector-host='"'${BROKER_IP}'"' connector-port="1099"/>   
+  <connector connector-host="'"${BROKER_IP}"'" connector-port="1099"/>   
   <authorisation>
       <whitelist>
          <entry domain="hawtio"/> 
