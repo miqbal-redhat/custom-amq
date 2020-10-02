@@ -33,7 +33,7 @@ ARTEMIS_INSTANCE_ETC_URI='file:/home/jboss/npb-jms-backbone/etc/'
 
 # Java Opts
 if [ -z "$JAVA_ARGS" ]; then
-    JAVA_ARGS="-Djava.net.preferIPv4Stack=true -Xms131m -Xmx524m   -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -XX:MaxMetaspaceSize=100m -XX:ParallelGCThreads=1 -Djava.util.concurrent.ForkJoinPool.common.parallelism=1 -XX:CICompilerCount=2 -XX:+ExitOnOutOfMemoryError -XX:+PrintClassHistogram -XX:+UseG1GC  -Dhawtio.realm=activemq  -Dhawtio.offline=true -Dhawtio.role=app_q84_dev_adm_amq,app_q84_dev_rw_am,app_q84_dev_r_amq -Dhawtio.rolePrincipalClasses=org.apache.activemq.artemis.spi.core.security.jaas.RolePrincipal -Djolokia.policyLocation=${ARTEMIS_INSTANCE_ETC_URI}jolokia-access.xml -Djon.id=amq -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.rmi.port=1098 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=0.0.0.0"
+    JAVA_ARGS="-Djava.net.preferIPv4Stack=true -Xms131m -Xmx524m   -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -XX:MaxMetaspaceSize=100m -XX:ParallelGCThreads=1 -Djava.util.concurrent.ForkJoinPool.common.parallelism=1 -XX:CICompilerCount=2 -XX:+ExitOnOutOfMemoryError -XX:+PrintClassHistogram -XX:+UseG1GC  -Dhawtio.realm=activemq  -Dhawtio.offline=true -Dhawtio.role=app_q84_dev_adm_amq,app_q84_dev_rw_am,app_q84_dev_r_amq -Dhawtio.rolePrincipalClasses=org.apache.activemq.artemis.spi.core.security.jaas.RolePrincipal -Djolokia.policyLocation=${ARTEMIS_INSTANCE_ETC_URI}jolokia-access.xml -Djon.id=amq"
 fi
 #
 # Logs Safepoints JVM pauses: Uncomment to enable them
