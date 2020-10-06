@@ -4,7 +4,7 @@ set -e
 INSTANCE_DIR=$1
 DISABLER_TAG="<!-- Remove this tag to enable custom configuration -->"
 
-declare -a CONFIG_FILES=("BROKER_XML" "LOGGING_PROPERTIES")
+declare -a CONFIG_FILES=("BROKER_XML" "LOGGING_PROPERTIES" "MANAGEMENT_XML")
 
 function swapVars() {
   sed -i "s/\${BROKER_IP}/$BROKER_IP/g" $1
