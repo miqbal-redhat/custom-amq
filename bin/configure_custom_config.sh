@@ -2,7 +2,7 @@
 set -e
 
 INSTANCE_DIR=$1
-DISABLER_TAG="<!-- Remove this tag to enable custom configuration -->"
+DISABLER_TAG=""
 
 declare -a CONFIG_FILES=("BROKER_XML" "LOGGING_PROPERTIES" "MANAGEMENT_XML")
 
